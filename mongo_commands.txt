@@ -1,0 +1,33 @@
+# mongo commands
+
+# coll.find() 
+""" to check if all users have been added """
+
+#  cls
+""" to clear the terminal // cls = clear """
+
+
+# coll.find({gender: 'm'});
+""" to find all users with gender m (male) in our coll (collection)
+
+
+# coll.find({gender: 'f', $or: [{nationality: 'american'}, {nationality: 'irish'}]});
+""" to find all female users who with (either) english *OR* irish nationality
+
+
+# coll.find({gender: 'f', $or: [{nationality: 'american'}, {nationality: 'irish'}]}).sort({nationality: 1});
+""" as above, and sort them by nationality 1 means accending // -1 means descending """
+
+
+# coll.update({gender: 'f'}, {$set: {hair_colour: 'blue'}});
+""" Heads-up: this only changes the first female's hair colour to blue. Not all females"""
+
+# coll.update({gender: 'f'}, {$set: {hair_colour: 'blue'}}, {multi: true});
+""" updates all female's hair_colour to blue """
+
+# coll.remove({first: 'kate', last: 'bush'});
+""" it removes the record from the data base  """
+
+# DANGER ZONE
+coll.remove()
+""" will empty the data base """
