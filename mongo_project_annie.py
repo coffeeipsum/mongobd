@@ -59,10 +59,11 @@ def add_record():
         print("Error accessing the database")
     
 def find_record():
+""" I'm using the len() instead of the recommended count() because it doesn't work for me in a dictionary """
     doc = get_record()
     if doc:
         print("")
-        print(doc.count())
+        print(len(doc))
         for k, v in doc.items():
             if k != "_id":
                 print(k.capitalize() + ": " + v.capitalize())
